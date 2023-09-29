@@ -1,27 +1,27 @@
-#!/usr/bin/bash
-#Display the numbers from 1 to 20
+#!/usr/bin/env bash
+# cultures with numbers ...
 
 i=1
 
 while [ "$i" -lt 21 ]; do
+  
+  case "$i" in
+    4)
+      echo "$i"
+      echo "bad luck from China"
+      ;;
+    9)
+      echo "$i"
+      echo "bad luck from Japan"
+      ;;
+    17)
+      echo "$i"
+      echo "bad luck from Italy"
+      ;;
+    *)
+      echo "$i"
+      ;;
+  esac
 
-    case "$i" in 
-        4)
-            echo "$i"
-            echo "back luck from China"
-            ;;
-        9)
-            echo "$i"
-            echo "back luck from Japan"
-            ;;
-        17)
-            echo "$i"
-            echo "back luck from Italy"
-            ;;
-        *)
-            echo "$i"
-            ;;
-        esac
-
-        ((i++))
-  done
+  ((i++))
+done
