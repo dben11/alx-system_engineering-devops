@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#displays numbers from 1 to 20
+#Display the numbers from 1 to 20
 
 i=1
 
@@ -24,5 +24,4 @@ while [ "$i" -lt 21 ]; do
         esac
 
         ((i++))
-    done
-
+done
