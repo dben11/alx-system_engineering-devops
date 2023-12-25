@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A script that uses ssh key to connect to a server.
+
+ssh ubuntu -i ~/.ssh/school
