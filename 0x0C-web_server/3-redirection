@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Install a nginx web server
+# Return a page that contain the string Hello World!
+# This is also a redirection page
+
+
+# a replacement string
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
+
+# nginx installation
+sudo apt-get -y update
+sudo apt-get install -y nginx
+
+# This to get an output from the default server output
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Performing a redirection
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+# Restart nginx
+sudo service nginx restart
