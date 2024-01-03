@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" A python script that uses a REST API for a given employee
-you must use urllib or request module
-the script must accept an integer as a parameter.
+"""
+Given an employee ID, returns information about his/her
+TODO list progress
 """
 
 import requests
