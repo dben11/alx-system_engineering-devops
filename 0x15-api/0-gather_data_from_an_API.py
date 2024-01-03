@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-'''
-Given an employee ID, returns information about his/her
+""" Given an employee ID, returns information about his/her
 TODO list progress
-'''
+"""
 
 import requests
 from sys import argv
