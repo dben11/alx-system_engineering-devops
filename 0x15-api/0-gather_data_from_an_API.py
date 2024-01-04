@@ -3,6 +3,22 @@
 Employee TODO List Progress Script
 
 This script interacts with a REST API to retrieve information about an employee's TODO list progress. It accepts an employee ID as a parameter and displays the employee's TODO list progress in a specific format.
+
+Requirements:
+- The script uses the requests module to make HTTP requests to the REST API.
+- The script must accept an integer as a parameter, which is the employee ID.
+
+Usage:
+python script_name.py employee_id
+
+Parameters:
+- employee_id: An integer representing the employee ID.
+
+Example:
+python script_name.py 1
+
+The script will display the employee's TODO list progress in the specified format.
+
 """
 
 import requests
