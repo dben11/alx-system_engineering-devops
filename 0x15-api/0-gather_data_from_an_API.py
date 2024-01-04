@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 """
+Write a Python script that, using this REST API, for a given employee ID, returns information about his/her TODO list progress.
+
+Requirements:
+
+You must use urllib or requests module
 A python script that uses a REST API
 Given an employee ID,
 Returns information about his/her TODO list progress.
