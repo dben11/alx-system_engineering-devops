@@ -3,7 +3,7 @@
 Employee TODO List Progress Script
 
 This script interacts with a REST API to retrieve information about an employee's TODO list progress. It accepts an employee ID as a parameter and displays the employee's TODO list progress in a specific format.
- """
+"""
 
 import requests
 from sys import argv
