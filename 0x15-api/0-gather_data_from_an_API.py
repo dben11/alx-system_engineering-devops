@@ -1,31 +1,15 @@
 #!/usr/bin/python3
 """
-Employee TODO List Progress Script
-
-This script interacts with a REST API to retrieve information about an employee's TODO list progress. It accepts an employee ID as a parameter and displays the employee's TODO list progress in a specific format.
-
-Requirements:
-- The script uses the requests module to make HTTP requests to the REST API.
-- The script must accept an integer as a parameter, which is the employee ID.
-
-Usage:
-python script_name.py employee_id
-
-Parameters:
-- employee_id: An integer representing the employee ID.
-
-Example:
-python script_name.py 1
-
-The script will display the employee's TODO list progress in the specified format.
-
+A python script that uses a REST API
+Given an employee ID,
+Returns information about his/her TODO list progress.
 """
 
 import requests
 from sys import argv
 
 # Code should not be executed when imported
-if __name__ == "__main__":
+if __name__ == '__main__':
     try:
         empId = int(argv[1])
     except ValueError:
@@ -40,25 +24,25 @@ todo_uri = '{}/todos'.format(user_uri)
 response = requests.get(user_uri).json()
 
 # Name of employee
-nameOf_emp = response.get('name')
+nameOfEmp = response.get('name')
 
 # user todo response
-todoResp = requests.get(todo_uri).json()
+response = requests.get(todo_uri).json()
 
 # Total number of task
-TotalNum_task = len(todoResp)
+totalNumTask = len(response)
 
 # Total number of uncompleted task
-uncompleted_task = sum([elem['completed'] is False for elem in todoResp])
+uncompletedTask = sum([elem['completed'] is False for elem in response])
 
 # Number of completed task
-completed_task = TotalNum_task - uncompleted_task
+completedTask = totalNumTask - uncompletedTask
 
 # Format the expected output
 output = "Employee {} is done with tasks({}/{}):"
-print(output.format(nameOf_emp, completed_task, TotalNum_task))
+print(output.format(nameOfEmp, completedTask, totalNumTask))
 
 # Printing the completed tasks
-for elem in todoResp:
+for elem in response:
     if elem.get("completed") is True:
         print("\t", elem.get("title"))
