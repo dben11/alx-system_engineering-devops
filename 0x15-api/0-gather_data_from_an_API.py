@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-Given an employee ID, returns information about his/her
-
-Todo list progress
+A python script that, using a REST API
+For a given an employee ID,
+returns information about his/her Todo list progress
 
  """
 
