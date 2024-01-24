@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#configure the sever to enable Nginx on 80 port
+# Configure the server to enable Nginx on 80 port
 
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx start
