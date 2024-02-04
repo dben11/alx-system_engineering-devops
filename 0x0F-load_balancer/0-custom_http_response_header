@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Install a nginx web server listening at port 80
+
+# A replacement string
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
+
+# Updating packages and install nginx
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Creating a customize index page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Performing redirection
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+# Creating a 404 erro page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+string_for_replace="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$string_for_replace/" /etc/nginx/sites-enabled/default
+
+# Customize HTTP response header
+sudo sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
+
+#test for syntax errors
+sudo nginx -t
+
+# Restart after nginx making changes
+sudo service nginx restart
