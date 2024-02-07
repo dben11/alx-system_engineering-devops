@@ -32,3 +32,22 @@ Be brief and straight to the point, between 400 to 600 words
 While postmortem format can vary, stick to this one so that you can get properly reviewed by your peers.
 
 Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
+
+
+
+
+
+
+
+
+
+
+
+[200~
+Home Pricing Blog Book a Call
+Lead image for The Best Technical Blogging Platforms
+The Best Technical Blogging Platforms
+Published on Jun 24, 2020 in platforms by Alyssa Shea
+6 minute read
+
+Are you considering starting your own technical blog but aren’t sure which platform to use? There are so many to choose from that it can be difficult to pull the trigger. I’ve rounded up some of the best writing platforms for running your technical blog site and why you might choose each of them.
