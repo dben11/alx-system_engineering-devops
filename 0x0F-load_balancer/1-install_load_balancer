@@ -1,4 +1,4 @@
-reate a script to install and configure HAProxy on lb-01 server
+#create a script to install and configure HAProxy on lb-01 server
 # Configure HAProxy to send traffic to web-01 and web-02 servers
 # Distribute requests using a roundrobin algorithm
 # Make sure that HAProxy can be managed via an init script
@@ -18,8 +18,8 @@ frontend dennisinc-frontend
 
 backend dennisinc-backend
         balance roundrobin
-        server 197763-web-01 52.91.117.126:80 check
-        server 197763-web-02 18.234.105.244:80 check
+        server 197763-web-01 18.204.16.91:80 check
+        server 197763-web-02 3.84.161.11:80 check
 
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
@@ -32,3 +32,4 @@ sudo haproxy -c -f /etc/haproxy/haproxy.cfg
 
 # Restart the nginx server
 sudo service haproxy restart
+
